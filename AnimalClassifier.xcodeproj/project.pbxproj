@@ -12,6 +12,7 @@
 		1890493D21E1E70600F3EE18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1890493B21E1E70600F3EE18 /* Main.storyboard */; };
 		1890493F21E1E70A00F3EE18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1890493E21E1E70A00F3EE18 /* Assets.xcassets */; };
 		1890494221E1E70A00F3EE18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1890494021E1E70A00F3EE18 /* LaunchScreen.storyboard */; };
+		1890494A21E1F9DA00F3EE18 /* AnimalClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1890494921E1F9DA00F3EE18 /* AnimalClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1890493E21E1E70A00F3EE18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1890494121E1E70A00F3EE18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1890494321E1E70A00F3EE18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1890494921E1F9DA00F3EE18 /* AnimalClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = AnimalClassifier.mlmodel; path = ../../../Downloads/AnimalClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				1890493721E1E70600F3EE18 /* AppDelegate.swift */,
+				1890494921E1F9DA00F3EE18 /* AnimalClassifier.mlmodel */,
 				1890493921E1E70600F3EE18 /* ViewController.swift */,
 				1890493B21E1E70600F3EE18 /* Main.storyboard */,
 				1890493E21E1E70A00F3EE18 /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1890493A21E1E70600F3EE18 /* ViewController.swift in Sources */,
+				1890494A21E1F9DA00F3EE18 /* AnimalClassifier.mlmodel in Sources */,
 				1890493821E1E70600F3EE18 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
