@@ -48,6 +48,23 @@ class AnimalClassificationViewController: UIViewController {
         }
     }
     
+    func updateClassification(for image: UIImage) {
+        classificationLbl.text = "Classifying ..."
+        guard let orienation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue)),let ciImage = CIImage(image: image) else {
+            return
+        }
+        DispatchQueue.global(qos: .userInteractive).async {
+            let handler = VNImageRequestHandler(ciImage: ciImage , orientation: orienation)
+            do {
+                try handler.perform([self.classificationRequest])
+                
+            }catch {
+                print("Failed to perform classification")
+            }
+        }
+       
+    }
+    
     @IBAction func cameraBtnWasPressed(_ sender: Any) {
         
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
