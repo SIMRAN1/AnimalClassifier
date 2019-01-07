@@ -13,6 +13,7 @@
 		1890494A21E1F9DA00F3EE18 /* AnimalClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1890494921E1F9DA00F3EE18 /* AnimalClassifier.mlmodel */; };
 		18FB17E321E35B1300CFB945 /* AnimalClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB17E221E35B1300CFB945 /* AnimalClassificationViewController.swift */; };
 		18FB17E621E35B3B00CFB945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FB17E521E35B3B00CFB945 /* Main.storyboard */; };
+		18FB17E821E35EF800CFB945 /* RoundedVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB17E721E35EF800CFB945 /* RoundedVisualEffectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1890494921E1F9DA00F3EE18 /* AnimalClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = AnimalClassifier.mlmodel; path = ../../../Downloads/AnimalClassifier.mlmodel; sourceTree = "<group>"; };
 		18FB17E221E35B1300CFB945 /* AnimalClassificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalClassificationViewController.swift; sourceTree = "<group>"; };
 		18FB17E521E35B3B00CFB945 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		18FB17E721E35EF800CFB945 /* RoundedVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedVisualEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1890493E21E1E70A00F3EE18 /* Assets.xcassets */,
 				1890494021E1E70A00F3EE18 /* LaunchScreen.storyboard */,
 				1890494321E1E70A00F3EE18 /* Info.plist */,
+				18FB17E721E35EF800CFB945 /* RoundedVisualEffectView.swift */,
 			);
 			path = AnimalClassifier;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18FB17E321E35B1300CFB945 /* AnimalClassificationViewController.swift in Sources */,
+				18FB17E821E35EF800CFB945 /* RoundedVisualEffectView.swift in Sources */,
 				1890494A21E1F9DA00F3EE18 /* AnimalClassifier.mlmodel in Sources */,
 				1890493821E1E70600F3EE18 /* AppDelegate.swift in Sources */,
 			);
