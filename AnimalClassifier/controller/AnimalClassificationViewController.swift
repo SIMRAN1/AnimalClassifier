@@ -31,21 +31,24 @@ class AnimalClassificationViewController: UIViewController {
     }()
     
     func processClassifictaion(for request: VNRequest, error: Error?) {
-        guard let classifictaion =  request.results as? [VNClassificationObservation] else {
-            self.classificationLbl.text = "Unable to classify image"
-            return
-        }
-        
-        if classifictaion.isEmpty {
-            self.classificationLbl.text = "Nothing Recognized"
-        } else {
-            let topClassification = classifictaion.prefix(2)
-            let description = topClassification.map { classifictaions in
-                return String(format: "%.2f", classifictaions.confidence * 100) + "% -" + classifictaions.identifier
-                
+        DispatchQueue.main.async {
+            guard let classifictaion =  request.results as? [VNClassificationObservation] else {
+                self.classificationLbl.text = "Unable to classify image"
+                return
             }
-            self.classificationLbl.text = "Classifications:\n" + description.joined(separator: "\n")
+            
+            if classifictaion.isEmpty {
+                self.classificationLbl.text = "Nothing Recognized"
+            } else {
+                let topClassification = classifictaion.prefix(2)
+                let description = topClassification.map { classifictaions in
+                    return String(format: "%.2f", classifictaions.confidence * 100) + "% -" + classifictaions.identifier
+                    
+                }
+                self.classificationLbl.text = "Classifications:\n" + description.joined(separator: "\n")
+            }
         }
+      
     }
     
     func updateClassification(for image: UIImage) {
@@ -108,5 +111,6 @@ extension AnimalClassificationViewController: UIImagePickerControllerDelegate, U
             fatalError("No Image Returned")
         }
         imageView.image = image
+        updateClassification(for: image)
     }
 }
