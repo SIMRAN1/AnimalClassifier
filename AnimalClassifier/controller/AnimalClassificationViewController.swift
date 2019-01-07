@@ -51,6 +51,7 @@ class AnimalClassificationViewController: UIViewController {
     func updateClassification(for image: UIImage) {
         classificationLbl.text = "Classifying ..."
         guard let orienation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue)),let ciImage = CIImage(image: image) else {
+            displayError()
             return
         }
         DispatchQueue.global(qos: .userInteractive).async {
@@ -63,6 +64,10 @@ class AnimalClassificationViewController: UIViewController {
             }
         }
        
+    }
+    
+    func displayError() {
+        classificationLbl.text = "Something went wrong...\nPlease try again"
     }
     
     @IBAction func cameraBtnWasPressed(_ sender: Any) {
