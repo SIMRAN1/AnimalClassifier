@@ -16,8 +16,36 @@ class AnimalClassificationViewController: UIViewController {
     @IBOutlet weak var classificationLbl: UILabel!
     @IBOutlet weak var cameraBtn: UIBarButtonItem!
     
-    override func viewDidLoad() {
+    lazy var classificationRequest: VNCoreMLRequest = {
+        do {
+            let model = try VNCoreMLModel(for: AnimalClassifier().model)
+            let request = VNCoreMLRequest(model: model, completionHandler: { (request, error) in
+                // process classification
+                self.processClassifictaion(for: request, error: error)
+            })
+            request.imageCropAndScaleOption = .centerCrop
+            return request
+        } catch {
+            fatalError("Failed to laod model")
+        }
+    }()
+    
+    func processClassifictaion(for request: VNRequest, error: Error?) {
+        guard let classifictaion =  request.results as? [VNClassificationObservation] else {
+            self.classificationLbl.text = "Unable to classify image"
+            return
+        }
         
+        if classifictaion.isEmpty {
+            self.classificationLbl.text = "Nothing Recognized"
+        } else {
+            let topClassification = classifictaion.prefix(2)
+            let description = topClassification.map { classifictaions in
+                return String(format: "%.2f", classifictaions.confidence * 100) + "% -" + classifictaions.identifier
+                
+            }
+            self.classificationLbl.text = "Classifications:\n" + description.joined(separator: "\n")
+        }
     }
     
     @IBAction func cameraBtnWasPressed(_ sender: Any) {
